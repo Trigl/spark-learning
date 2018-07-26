@@ -13,6 +13,7 @@ object GroupByTest {
     val numReducers = 36
 
     val sc = new SparkContext(sparkConf)
+    println("App Started!")
 
     val pairs1 = sc.parallelize(0 until numMappers, numMappers).flatMap { p =>
       val ranGen = new Random
