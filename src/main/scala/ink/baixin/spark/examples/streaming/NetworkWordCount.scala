@@ -11,9 +11,9 @@ import org.apache.spark.streaming.{Seconds, StreamingContext}
   * <hostname> and <port> describe the TCP server that Spark Streaming would connect to receive data.
   *
   * To run this on your local machine, you need to first run a Netcat server
-  *    `$ nc -lk 9999`
+  * `$ nc -lk 9999`
   * and then run the example
-  *    `$ bin/run-example org.apache.spark.examples.streaming.NetworkWordCount localhost 9999`
+  * `$ bin/run-example org.apache.spark.examples.streaming.NetworkWordCount localhost 9999`
   */
 object NetworkWordCount {
   def main(args: Array[String]) {
@@ -37,7 +37,7 @@ object NetworkWordCount {
     val wordCounts = words.map(x => (x, 1)).reduceByKey(_ + _)
     wordCounts.print()
 
-    ssc.start()             // Start the computation
-    ssc.awaitTermination()  // Wait for the computation to terminate
+    ssc.start() // Start the computation
+    ssc.awaitTermination() // Wait for the computation to terminate
   }
 }
